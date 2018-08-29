@@ -18,12 +18,16 @@ public class Account {
 	@Column 
 	private String surname;
 	
+	@Column (name = "account_number")
+	private long accountnumber;
+	
 	public Account () {}
 
-	public Account(Integer id, String firstName, String surName) {
+	public Account(Integer id, String firstName, String surName, long accountNumber) {
 		this.id = id;
 		this.firstName = firstName;
 		this.surname = surName;
+		this.accountnumber = accountNumber;
 	}
 
 	public Integer getId() {
@@ -36,6 +40,14 @@ public class Account {
 
 	public String getFirstName() {
 		return firstName;
+	}
+	
+	public void setAccountnumber(long accountNumber) {
+		this.accountnumber = accountNumber;
+	}
+	
+	public long getAccountnumber() {
+		return accountnumber;
 	}
 
 	public void setFirstName(String firstName) {
